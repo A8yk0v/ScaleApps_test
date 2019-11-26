@@ -6,13 +6,13 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Scanner;
 
-public class FileWorker implements IWorker {
+public class FileFileWorker implements IWorker {
 
     private String inputFile;
     private String outputFile;
     private SolveEngine solveEngine;
 
-    public FileWorker(String inputFile, String outputFile, SolveEngine solveEngine) {
+    public FileFileWorker(String inputFile, String outputFile, SolveEngine solveEngine) {
         this.inputFile = inputFile;
         this.outputFile = outputFile;
         this.solveEngine = solveEngine;
@@ -26,7 +26,7 @@ public class FileWorker implements IWorker {
         {
             while (scan.hasNextLine()) {
                 String answer = solveEngine.solve( scan.nextLine() );
-                fileWriter.write(answer + "\n");
+                fileWriter.write(answer + '\n');
             }
         }
         catch (NotExistingCommand e) {

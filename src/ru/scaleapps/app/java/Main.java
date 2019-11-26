@@ -1,5 +1,6 @@
 package ru.scaleapps.app.java;
 
+import ru.scaleapps.app.java.exception.IncorrectParameters;
 import ru.scaleapps.app.java.exception.NotExistingCommand;
 
 public class Main {
@@ -9,16 +10,23 @@ public class Main {
             SolveEngine solveEngine = new SolveEngine();
             IWorker iWorker;
 
-            if (args.length == 1 && args[0].equals("-"))
-                iWorker = new ConsoleWorker(solveEngine);
-            else if (args.length == 2)
-                iWorker = new FileWorker(args[0], args[1], solveEngine);
+            if (args.length != 2)
+                throw new IncorrectParameters();
+            if (args[0].equals("-") && args[1].equals("-"))
+                iWorker = new ConsoleConsoleWorker(solveEngine);
+            else if (args[0].equals("-"))
+                iWorker = new ConsoleFileWorker(args[1], solveEngine);
+            else if (args[1].equals("-"))
+                iWorker = new FileConsoleWorker(args[0], solveEngine);
             else
-                throw new NotExistingCommand();
+                iWorker = new FileFileWorker(args[0], args[1], solveEngine);
 
             iWorker.go();
         }
         catch (NotExistingCommand e) {
+            System.out.println(e.toString());
+        }
+        catch (IncorrectParameters e) {
             System.out.println(e.toString());
         }
     }

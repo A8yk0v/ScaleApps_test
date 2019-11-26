@@ -8,6 +8,8 @@ public class SolveEngine {
         String[] commandMas = params.split(" {1,}");
 
         if (commandMas[0].equals("add")) {
+            if (commandMas.length < 3)
+                throw new NotExistingCommand();
             int sum = 0;
             for (int i = 1; i < commandMas.length; i++) {
                 sum += Integer.parseInt(commandMas[i]);
@@ -15,6 +17,8 @@ public class SolveEngine {
             return "Answer:" + sum;
         }
         else if (commandMas[0].equals("mul")) {
+            if (commandMas.length < 3)
+                throw new NotExistingCommand();
             int prod = 1;
             for (int i = 1; i < commandMas.length; i++) {
                 prod *= Integer.parseInt(commandMas[i]);

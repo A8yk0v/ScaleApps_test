@@ -5,4 +5,9 @@ public class NotExistingCommand extends RuntimeException {
     public String toString() {
         return "Not existing command";
     }
+
+    @Override
+    public String getMessage() {
+        return "Not existing command";
+    }
 }
