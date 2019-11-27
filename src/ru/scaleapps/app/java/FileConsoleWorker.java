@@ -5,14 +5,12 @@ import ru.scaleapps.app.java.exception.NotExistingCommand;
 import java.io.FileReader;
 import java.util.Scanner;
 
-public class FileConsoleWorker implements IWorker {
-
+public class FileConsoleWorker extends Worker {
     private String inputFile;
-    private SolveEngine solveEngine;
 
     public FileConsoleWorker(String inputFile, SolveEngine solveEngine) {
+        super(solveEngine);
         this.inputFile = inputFile;
-        this.solveEngine = solveEngine;
     }
 
     @Override
@@ -29,7 +27,6 @@ public class FileConsoleWorker implements IWorker {
             throw e;
         }
         catch (Exception e) {
-            // TODO заменить
             e.printStackTrace();
         }
     }

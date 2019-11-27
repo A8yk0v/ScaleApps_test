@@ -6,14 +6,12 @@ import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.InputStreamReader;
 
-public class ConsoleFileWorker implements IWorker {
-
+public class ConsoleFileWorker extends Worker {
     private String outputFile;
-    private SolveEngine solveEngine;
 
     public ConsoleFileWorker(String outputFile, SolveEngine solveEngine) {
+        super(solveEngine);
         this.outputFile = outputFile;
-        this.solveEngine = solveEngine;
     }
 
     @Override
@@ -34,7 +32,6 @@ public class ConsoleFileWorker implements IWorker {
             throw e;
         }
         catch (Exception e) {
-            // TODO заменить
             e.printStackTrace();
         }
     }

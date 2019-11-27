@@ -14,7 +14,7 @@ public class SolveEngine {
             for (int i = 1; i < commandMas.length; i++) {
                 sum += Integer.parseInt(commandMas[i]);
             }
-            return "Answer:" + sum;
+            return "Ответ:" + sum;
         }
         else if (commandMas[0].equals("mul")) {
             if (commandMas.length < 3)
@@ -23,7 +23,7 @@ public class SolveEngine {
             for (int i = 1; i < commandMas.length; i++) {
                 prod *= Integer.parseInt(commandMas[i]);
             }
-            return "Answer:" + prod;
+            return "Ответ:" + prod;
         }
         else if ((commandMas[0].equals("muladd"))) {
             if (commandMas.length != 4)
@@ -31,7 +31,7 @@ public class SolveEngine {
             int answer = Integer.parseInt(commandMas[1]) *
                          Integer.parseInt(commandMas[2]) +
                          Integer.parseInt(commandMas[3]);
-            return "Answer:" + answer;
+            return "Ответ:" + answer;
         }
         else throw new NotExistingCommand();
     }

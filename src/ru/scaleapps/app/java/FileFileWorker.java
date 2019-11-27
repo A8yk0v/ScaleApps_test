@@ -6,16 +6,14 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Scanner;
 
-public class FileFileWorker implements IWorker {
-
+public class FileFileWorker extends Worker {
     private String inputFile;
     private String outputFile;
-    private SolveEngine solveEngine;
 
     public FileFileWorker(String inputFile, String outputFile, SolveEngine solveEngine) {
+        super(solveEngine);
         this.inputFile = inputFile;
         this.outputFile = outputFile;
-        this.solveEngine = solveEngine;
     }
 
     @Override
@@ -33,7 +31,6 @@ public class FileFileWorker implements IWorker {
             throw e;
         }
         catch (Exception e) {
-            // TODO заменить
             e.printStackTrace();
         }
     }

@@ -5,12 +5,10 @@ import ru.scaleapps.app.java.exception.NotExistingCommand;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class ConsoleConsoleWorker implements IWorker {
-
-    private SolveEngine solveEngine;
+public class ConsoleConsoleWorker extends Worker {
 
     public ConsoleConsoleWorker(SolveEngine solveEngine) {
-        this.solveEngine = solveEngine;
+        super(solveEngine);
     }
 
     @Override
@@ -29,8 +27,6 @@ public class ConsoleConsoleWorker implements IWorker {
             throw  e;
         }
         catch (Exception e) {
-            // TODO заменить
-            //throw e;
             e.printStackTrace();
         }
     }
