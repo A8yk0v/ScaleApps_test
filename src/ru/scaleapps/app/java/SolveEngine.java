@@ -2,6 +2,12 @@ package ru.scaleapps.app.java;
 
 import ru.scaleapps.app.java.exception.NotExistingCommand;
 
+/**
+ * Класс скрывает в себе работу с арифметической операцией
+ *
+ * Метод Solve получает строку являющейся командой с аргументами
+ * и возвращает строку ответ - решение этой команды
+ */
 public class SolveEngine {
 
     public String solve(String params) throws NotExistingCommand {

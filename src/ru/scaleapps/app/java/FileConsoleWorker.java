@@ -5,6 +5,11 @@ import ru.scaleapps.app.java.exception.NotExistingCommand;
 import java.io.FileReader;
 import java.util.Scanner;
 
+/**
+ * Реализация Worker-а, которая:
+ * Считывает данные из файла;
+ * Выводит информацию на консоль.
+ */
 public class FileConsoleWorker extends Worker {
     private String inputFile;
 

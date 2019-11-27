@@ -6,6 +6,11 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Scanner;
 
+/**
+ * Реализация Worker-а, которая:
+ * Считывает данные из файла;
+ * Выводит информацию в файл.
+ */
 public class FileFileWorker extends Worker {
     private String inputFile;
     private String outputFile;

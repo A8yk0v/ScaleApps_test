@@ -3,6 +3,10 @@ package ru.scaleapps.app.java;
 import ru.scaleapps.app.java.exception.IncorrectParameters;
 import ru.scaleapps.app.java.exception.NotExistingCommand;
 
+/**
+ * Основной класс проекта.
+ * Происходит разбор параметров и формируется необходимый объект Worker
+ */
 public class Main {
 
     public static void main(String[] args) {

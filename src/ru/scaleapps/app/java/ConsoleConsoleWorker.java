@@ -5,6 +5,11 @@ import ru.scaleapps.app.java.exception.NotExistingCommand;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+/**
+ * Реализация Worker-а, которая:
+ * Считывает данные с консоли;
+ * Выводит информацию на консоль.
+ */
 public class ConsoleConsoleWorker extends Worker {
 
     public ConsoleConsoleWorker(SolveEngine solveEngine) {

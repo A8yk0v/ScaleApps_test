@@ -6,6 +6,11 @@ import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.InputStreamReader;
 
+/**
+ * Реализация Worker-а, которая:
+ * Считывает данные с консоли;
+ * Выводит информацию на в файл.
+ */
 public class ConsoleFileWorker extends Worker {
     private String outputFile;
 
